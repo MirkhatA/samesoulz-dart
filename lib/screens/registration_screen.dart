@@ -19,7 +19,24 @@ class RegistrationScreen extends StatelessWidget {
               child: Column(
                 children: [
                   TextFormField(
-
+                    decoration: InputDecoration(hintText: 'First name'),
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(hintText: 'Last name'),
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(hintText: 'Username'),
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(hintText: 'Email'),
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(hintText: 'Password'),
+                    obscureText: true,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text('Submit'),
                   )
                 ],
               ),
@@ -30,3 +47,4 @@ class RegistrationScreen extends StatelessWidget {
     );
   }
 }
+

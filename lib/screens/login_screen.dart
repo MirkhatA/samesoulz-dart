@@ -15,9 +15,30 @@ class LoginScreen extends StatelessWidget {
               },
               child: Text("back"),
             ),
+            Form(
+              child: Column(
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(hintText: "Username of email"),
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(hintText: "Password"),
+                    obscureText: true,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text("Submit"),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
+
+// userName
+// email
+// password
