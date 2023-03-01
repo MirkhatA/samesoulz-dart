@@ -20,6 +20,12 @@ class RegistrationScreen extends StatelessWidget {
                 children: [
                   TextFormField(
                     decoration: InputDecoration(hintText: 'First name'),
+                    validator: (value) {
+                      if (value != null && value.trim().isEmpty)
+                        return "First name can't be empty";
+
+                      return null;
+                    },
                   ),
                   TextFormField(
                     decoration: InputDecoration(hintText: 'Last name'),
@@ -33,6 +39,14 @@ class RegistrationScreen extends StatelessWidget {
                   TextFormField(
                     decoration: InputDecoration(hintText: 'Password'),
                     obscureText: true,
+                    validator: (value) {
+                      if (value != null && value.trim().isEmpty) {
+                        return "Password required";
+                      }
+                      if (value != null && value.length < 8) {
+                        return "Password needs to be at least 8 char";
+                      }
+                    },
                   ),
                   ElevatedButton(
                     onPressed: () {},
@@ -47,4 +61,3 @@ class RegistrationScreen extends StatelessWidget {
     );
   }
 }
-
