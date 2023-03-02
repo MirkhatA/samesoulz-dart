@@ -5,6 +5,8 @@ class RegistrationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormState>();
+
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -16,6 +18,7 @@ class RegistrationScreen extends StatelessWidget {
               child: Text("back"),
             ),
             Form(
+              key: formKey,
               child: Column(
                 children: [
                   TextFormField(
@@ -23,18 +26,32 @@ class RegistrationScreen extends StatelessWidget {
                     validator: (value) {
                       if (value != null && value.trim().isEmpty)
                         return "First name can't be empty";
-
                       return null;
                     },
                   ),
                   TextFormField(
                     decoration: InputDecoration(hintText: 'Last name'),
+                    validator: (value) {
+                      if (value != null && value.trim().isEmpty)
+                        return "Last name can't be empty";
+                      return null;
+                    },
                   ),
                   TextFormField(
                     decoration: InputDecoration(hintText: 'Username'),
+                    validator: (value) {
+                      if (value != null && value.trim().isEmpty)
+                        return "Username can't be empty";
+                      return null;
+                    },
                   ),
                   TextFormField(
                     decoration: InputDecoration(hintText: 'Email'),
+                    validator: (value) {
+                      if (value != null && value.trim().isEmpty)
+                        return "email can't be empty";
+                      return null;
+                    },
                   ),
                   TextFormField(
                     decoration: InputDecoration(hintText: 'Password'),
@@ -49,7 +66,11 @@ class RegistrationScreen extends StatelessWidget {
                     },
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      if (formKey.currentState!.validate()) {
+                        print('The form is valid');
+                      }
+                    },
                     child: Text('Submit'),
                   )
                 ],
