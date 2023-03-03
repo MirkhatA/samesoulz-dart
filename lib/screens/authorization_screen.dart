@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:samesoulz/screens/login_screen.dart';
-
-import 'package:samesoulz/screens/screens.dart';
 
 class AuthorizationScreen extends StatelessWidget {
   const AuthorizationScreen({Key? key}) : super(key: key);
